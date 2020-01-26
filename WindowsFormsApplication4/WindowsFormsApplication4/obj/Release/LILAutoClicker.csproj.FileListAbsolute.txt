@@ -1,0 +1,9 @@
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\WindowsFormsApplication4\WindowsFormsApplication4\bin\Release\LILAutoClicker.exe.config
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\WindowsFormsApplication4\WindowsFormsApplication4\bin\Release\LILAutoClicker.exe
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\WindowsFormsApplication4\WindowsFormsApplication4\bin\Release\LILAutoClicker.pdb
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\WindowsFormsApplication4\WindowsFormsApplication4\obj\Release\WindowsFormsApplication4.Form1.resources
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\WindowsFormsApplication4\WindowsFormsApplication4\obj\Release\LILAutoClicker.LILAboutBox.resources
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\WindowsFormsApplication4\WindowsFormsApplication4\obj\Release\LILAutoClicker.Properties.Resources.resources
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\WindowsFormsApplication4\WindowsFormsApplication4\obj\Release\LILAutoClicker.csproj.GenerateResource.Cache
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\WindowsFormsApplication4\WindowsFormsApplication4\obj\Release\LILAutoClicker.exe
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\WindowsFormsApplication4\WindowsFormsApplication4\obj\Release\LILAutoClicker.pdb

@@ -14,8 +14,7 @@ namespace WindowsFormsApplication4
         [STAThread]
         static void Main()
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
+            Application.SetCompatibleTextRenderingDefault(defaultValue: false);
             Application.Run(new Form1());
         }
     }

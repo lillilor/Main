@@ -45,12 +45,15 @@
             this.button1 = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.presetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exportConfigurationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.importConfigurationFromFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.closeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aBOUTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutLILAutoClickerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.presetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.diablo3CrusSeedFarmGrToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.label6 = new System.Windows.Forms.Label();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -104,7 +107,7 @@
             // 
             this.button3.Location = new System.Drawing.Point(180, 210);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 57);
+            this.button3.Size = new System.Drawing.Size(75, 77);
             this.button3.TabIndex = 8;
             this.button3.Text = "Exit";
             this.button3.UseVisualStyleBackColor = true;
@@ -124,17 +127,18 @@
             this.textBox5.Location = new System.Drawing.Point(95, 150);
             this.textBox5.Name = "textBox5";
             this.textBox5.ReadOnly = true;
-            this.textBox5.Size = new System.Drawing.Size(160, 20);
+            this.textBox5.Size = new System.Drawing.Size(122, 20);
             this.textBox5.TabIndex = 12;
             this.textBox5.TabStop = false;
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(180, 180);
+            this.button4.Font = new System.Drawing.Font("Segoe UI Black", 12F);
+            this.button4.Location = new System.Drawing.Point(225, 145);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.Size = new System.Drawing.Size(30, 30);
             this.button4.TabIndex = 5;
-            this.button4.Text = "Reset";
+            this.button4.Text = "↻";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
@@ -177,7 +181,7 @@
             this.button2.Image = global::LILAutoClicker.Properties.Resources.iconfinder_button_black_stop_40711;
             this.button2.Location = new System.Drawing.Point(95, 210);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 57);
+            this.button2.Size = new System.Drawing.Size(75, 77);
             this.button2.TabIndex = 7;
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
@@ -187,13 +191,14 @@
             this.button1.Image = global::LILAutoClicker.Properties.Resources.iconfinder_15_3049264;
             this.button1.Location = new System.Drawing.Point(10, 210);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 57);
+            this.button1.Size = new System.Drawing.Size(75, 77);
             this.button1.TabIndex = 6;
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // menuStrip1
             // 
+            this.menuStrip1.BackColor = System.Drawing.Color.LightGray;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
             this.aBOUTToolStripMenuItem});
@@ -213,10 +218,38 @@
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "File";
             // 
+            // presetToolStripMenuItem
+            // 
+            this.presetToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.exportConfigurationToolStripMenuItem,
+            this.importConfigurationFromFileToolStripMenuItem});
+            this.presetToolStripMenuItem.Name = "presetToolStripMenuItem";
+            this.presetToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
+            this.presetToolStripMenuItem.Text = "Manage";
+            // 
+            // exportConfigurationToolStripMenuItem
+            // 
+            this.exportConfigurationToolStripMenuItem.Name = "exportConfigurationToolStripMenuItem";
+            this.exportConfigurationToolStripMenuItem.Size = new System.Drawing.Size(242, 22);
+            this.exportConfigurationToolStripMenuItem.Text = "Export configuration to file...";
+            this.exportConfigurationToolStripMenuItem.Click += new System.EventHandler(this.diablo3CrusSeedFarmGrToolStripMenuItem_Click);
+            // 
+            // importConfigurationFromFileToolStripMenuItem
+            // 
+            this.importConfigurationFromFileToolStripMenuItem.Name = "importConfigurationFromFileToolStripMenuItem";
+            this.importConfigurationFromFileToolStripMenuItem.Size = new System.Drawing.Size(242, 22);
+            this.importConfigurationFromFileToolStripMenuItem.Text = "Import configuration from file...";
+            this.importConfigurationFromFileToolStripMenuItem.Click += new System.EventHandler(this.importConfigurationFromFileToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(114, 6);
+            // 
             // closeToolStripMenuItem
             // 
             this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
-            this.closeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.closeToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
             this.closeToolStripMenuItem.Text = "Close";
             this.closeToolStripMenuItem.Click += new System.EventHandler(this.closeToolStripMenuItem_Click);
             // 
@@ -235,31 +268,32 @@
             this.aboutLILAutoClickerToolStripMenuItem.Text = "About LILAutoClicker";
             this.aboutLILAutoClickerToolStripMenuItem.Click += new System.EventHandler(this.aboutLILAutoClickerToolStripMenuItem_Click);
             // 
-            // presetToolStripMenuItem
+            // label6
             // 
-            this.presetToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.diablo3CrusSeedFarmGrToolStripMenuItem});
-            this.presetToolStripMenuItem.Name = "presetToolStripMenuItem";
-            this.presetToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.presetToolStripMenuItem.Text = "Preset";
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(10, 180);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(63, 13);
+            this.label6.TabIndex = 14;
+            this.label6.Text = "Randomize:";
             // 
-            // diablo3CrusSeedFarmGrToolStripMenuItem
+            // checkBox1
             // 
-            this.diablo3CrusSeedFarmGrToolStripMenuItem.Name = "diablo3CrusSeedFarmGrToolStripMenuItem";
-            this.diablo3CrusSeedFarmGrToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
-            this.diablo3CrusSeedFarmGrToolStripMenuItem.Text = "Diablo3 Crus speed farm gr";
-            this.diablo3CrusSeedFarmGrToolStripMenuItem.Click += new System.EventHandler(this.diablo3CrusSeedFarmGrToolStripMenuItem_Click);
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(95, 180);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(15, 14);
+            this.checkBox1.TabIndex = 15;
+            this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(265, 276);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(190)))), ((int)(((byte)(189)))));
+            this.ClientSize = new System.Drawing.Size(265, 296);
+            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.numericUpDown2);
             this.Controls.Add(this.numericUpDown1);
@@ -279,6 +313,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "LILAutoClicker";
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Form1_KeyPress);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
             this.menuStrip1.ResumeLayout(false);
@@ -310,8 +345,11 @@
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem closeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem presetToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem diablo3CrusSeedFarmGrToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem exportConfigurationToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.ToolStripMenuItem importConfigurationFromFileToolStripMenuItem;
     }
 }
 

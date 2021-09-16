@@ -96,6 +96,7 @@
     <Content Include="icon.ico" />
     <Content Include="iconfinder_khotkeys_1330.ico" />
     <Content Include="Resources\keyboard.bmp" />
+    <Content Include="Resources\logout01.png" />
     <None Include="Resources\keyboard1.bmp" />
     <None Include="Resources\iconfinder_button-stop_red_69077.ico" />
     <None Include="Resources\iconfinder_button_black_stop_40711.ico" />

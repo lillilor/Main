@@ -16,18 +16,19 @@ namespace WindowsFormsApplication4
         private delegate void SetTextCallback();
         private delegate void Button1Enable();
         private delegate void Button2Disable();
-        Thread thread;
+
         private const int CP_NOCLOSE_BUTTON = 512;
 
-        string process;
-        string keyToPress;
-        int delay;
-        int repeatFor;
-        int counter;
-        private int localCounter;
-        Boolean abort = false;
-        private bool reset = false;
-        private bool running = false;
+        Thread          thread;
+        string          process;
+        string          keyToPress;
+        int             delay;
+        int             repeatFor;
+        int             counter;
+        private int     localCounter;
+        Boolean         abort = false;
+        private bool    reset = false;
+        private bool    running = false;
 
  
         [DllImport("User32.dll")]
@@ -85,7 +86,7 @@ namespace WindowsFormsApplication4
 
             if(process == "")
             {
-                MessageBox.Show("Precess must be filled in", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Process must be filled in", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                 ret = false;
             }
@@ -125,6 +126,7 @@ namespace WindowsFormsApplication4
             keyToPress = textBox2.Text;
             delay = (int)numericUpDown1.Value;
             repeatFor = (int)numericUpDown2.Value;
+
             if (validate())
             {
                 thread = new Thread(RunThread);
@@ -158,9 +160,9 @@ namespace WindowsFormsApplication4
 
         private bool positiveNegativeOffset()
         {
-            bool flag = false;
             Random random = new Random();
             int num = random.Next(1, 100);
+
             if (num >= 50)
             {
                 return true;
@@ -171,12 +173,15 @@ namespace WindowsFormsApplication4
         private int getOffset()
         {
             int num = 0;
+
             if (!checkBox1.Checked)
             {
                 return 0;
             }
+
             Random random = new Random();
             num = random.Next(1, 20);
+
             if (!positiveNegativeOffset())
             {
                 num *= -1;
@@ -216,12 +221,15 @@ namespace WindowsFormsApplication4
             try
             {
                 Process process = Process.GetProcessesByName(this.process).First();
+
                 if (process == null)
                 {
                     return;
                 }
+
                 IntPtr mainWindowHandle = process.MainWindowHandle;
                 SetForegroundWindow(mainWindowHandle);
+
                 if (repeatFor == 0)
                 {
                     while (true)
@@ -229,10 +237,12 @@ namespace WindowsFormsApplication4
                         performOperation();
                     }
                 }
+
                 for (int i = 0; i < repeatFor; i++)
                 {
                     performOperation();
                 }
+
                 button1.Enabled = true;
                 button2.Enabled = false;
             }
@@ -319,6 +329,7 @@ namespace WindowsFormsApplication4
             saveFileDialog.RestoreDirectory = true;
             string xml = $"<conf><process>{comboBox1.Text}</process><keys>{textBox2.Text}</keys><delay>{numericUpDown1.Value}</delay><repeatfor>{numericUpDown2.Value}</repeatfor><randomize>{checkBox1.Checked}</randomize></conf>";
             xmlDocument.LoadXml(xml);
+            
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
                 xmlDocument.Save(saveFileDialog.FileName);
@@ -333,6 +344,7 @@ namespace WindowsFormsApplication4
             openFileDialog.Filter = "XML files (*.xml)|*.xml|All files (*.*)|*.*";
             openFileDialog.FilterIndex = 1;
             openFileDialog.RestoreDirectory = true;
+            
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
                 empty = openFileDialog.FileName;

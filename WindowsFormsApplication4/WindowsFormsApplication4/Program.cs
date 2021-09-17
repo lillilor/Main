@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WindowsFormsApplication4
+namespace LIL
 {
     static class Program
     {
@@ -15,7 +12,7 @@ namespace WindowsFormsApplication4
         static void Main()
         {
             Application.SetCompatibleTextRenderingDefault(defaultValue: false);
-            Application.Run(new Form1());
+            Application.Run(new LILAutoClickerForm());
         }
     }
 }

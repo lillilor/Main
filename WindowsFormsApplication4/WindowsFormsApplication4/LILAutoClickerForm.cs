@@ -24,7 +24,7 @@ namespace LIL
         int             delay;
         int             repeatFor;
         int             counter;
-        private int     localCounter;
+        //private int     counterAux;
         bool            abort = false;
         private bool    reset = false;
         bool            running = false;
@@ -144,7 +144,7 @@ namespace LIL
             Playbutton.Enabled = true;
             Stopbutton.Enabled = false;
             Text = "LILAutoClicker";
-            localCounter = 0;
+            //counterAux = 0;
             running = false;
         }
 
@@ -153,7 +153,7 @@ namespace LIL
             Thread.Sleep(delay + GetOffset());
             SendKeys.SendWait(keyToPress);
             counter++;
-            localCounter++;
+            //counterAux++;
             SetText();
         }
 

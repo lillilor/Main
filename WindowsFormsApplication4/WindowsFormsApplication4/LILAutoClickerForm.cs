@@ -62,19 +62,19 @@ namespace LIL
             {
                 if (counter == 0 || counter % 4 == 0)
                 {
-                    Text = "LILAutoClicker Running";
+                    Text = "LILAutoClicker [Running]";
                 }
                 if (counter % 4 == 1)
                 {
-                    Text = "LILAutoClicker Running.";
+                    Text = "LILAutoClicker [Running.]";
                 }
                 if (counter % 4 == 2)
                 {
-                    Text = "LILAutoClicker Running..";
+                    Text = "LILAutoClicker [Running..]";
                 }
                 if (counter % 4 == 3)
                 {
-                    Text = "LILAutoClicker Running...";
+                    Text = "LILAutoClicker [Running...]";
                 }
             }
         }

@@ -27,7 +27,7 @@ namespace LIL
         //private int     counterAux;
         bool            abort = false;
         private bool    reset = false;
-        bool            running = false;
+        public bool            running = false;
 
  
         [DllImport("User32.dll")]
@@ -119,7 +119,7 @@ namespace LIL
             }
         }
 
-        private void StartProcess()
+        public void StartProcess()
         {
             process = ProcessNameComboBox.Text;
             keyToPress = KeyTextBox.Text;
@@ -137,7 +137,7 @@ namespace LIL
             }
         }
 
-        private void StopProcess()
+        public void StopProcess()
         {
             abort = true;
             thread.Abort();

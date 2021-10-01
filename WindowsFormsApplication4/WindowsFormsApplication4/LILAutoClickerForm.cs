@@ -349,11 +349,23 @@ namespace LIL
                 XmlNode xmlNode3 = xmlDocument.DocumentElement.SelectSingleNode("/conf/delay");
                 XmlNode xmlNode4 = xmlDocument.DocumentElement.SelectSingleNode("/conf/repeatfor");
                 XmlNode xmlNode5 = xmlDocument.DocumentElement.SelectSingleNode("/conf/randomize");
-                ProcessNameComboBox.Text = xmlNode.InnerXml;
-                KeyTextBox.Text = xmlNode2.InnerXml;
-                DelaynumericUpDown.Value = int.Parse(xmlNode3.InnerXml);
-                RepeatnumericUpDown.Value = int.Parse(xmlNode4.InnerXml);
-                RandomcheckBox.Checked = bool.Parse(xmlNode5.InnerXml);
+
+                if (xmlNode == null ||
+                   xmlNode2 == null ||
+                   xmlNode3 == null ||
+                   xmlNode4 == null ||
+                   xmlNode5 == null )
+                {
+                    MessageBox.Show("This is not a valid file!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                }
+                else
+                {
+                    ProcessNameComboBox.Text = xmlNode.InnerXml;
+                    KeyTextBox.Text = xmlNode2.InnerXml;
+                    DelaynumericUpDown.Value = int.Parse(xmlNode3.InnerXml);
+                    RepeatnumericUpDown.Value = int.Parse(xmlNode4.InnerXml);
+                    RandomcheckBox.Checked = bool.Parse(xmlNode5.InnerXml);
+                }
             }
         }
 

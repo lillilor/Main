@@ -8,6 +8,7 @@ C:\Users\Administrator\Documents\Visual Studio 2015\Projects\WindowsFormsApplica
 C:\Users\Administrator\Documents\Visual Studio 2015\Projects\WindowsFormsApplication4\WindowsFormsApplication4\obj\Debug\LILAutoClicker.pdb
 C:\Users\Administrator\Documents\Visual Studio 2015\Projects\WindowsFormsApplication4\WindowsFormsApplication4\obj\Debug\LILAutoClicker.csprojResolveAssemblyReference.cache
 C:\Users\Administrator\Documents\Visual Studio 2015\Projects\WindowsFormsApplication4\WindowsFormsApplication4\obj\Debug\LILAutoClicker.LILAboutBox.resources
+C:\Users\lorenzo.lilli\source\repos\lillilor\Main\WindowsFormsApplication4\WindowsFormsApplication4\obj\Debug\LILAutoClicker.csproj.CoreCompileInputs.cache
 C:\Users\lorenzo.lilli\source\repos\lillilor\Main\WindowsFormsApplication4\WindowsFormsApplication4\bin\Debug\LILAutoClicker.exe.config
 C:\Users\lorenzo.lilli\source\repos\lillilor\Main\WindowsFormsApplication4\WindowsFormsApplication4\bin\Debug\LILAutoClicker.exe
 C:\Users\lorenzo.lilli\source\repos\lillilor\Main\WindowsFormsApplication4\WindowsFormsApplication4\bin\Debug\LILAutoClicker.pdb
@@ -15,6 +16,5 @@ C:\Users\lorenzo.lilli\source\repos\lillilor\Main\WindowsFormsApplication4\Windo
 C:\Users\lorenzo.lilli\source\repos\lillilor\Main\WindowsFormsApplication4\WindowsFormsApplication4\obj\Debug\LILAutoClicker.LILAboutBox.resources
 C:\Users\lorenzo.lilli\source\repos\lillilor\Main\WindowsFormsApplication4\WindowsFormsApplication4\obj\Debug\LILAutoClicker.Properties.Resources.resources
 C:\Users\lorenzo.lilli\source\repos\lillilor\Main\WindowsFormsApplication4\WindowsFormsApplication4\obj\Debug\LILAutoClicker.csproj.GenerateResource.cache
-C:\Users\lorenzo.lilli\source\repos\lillilor\Main\WindowsFormsApplication4\WindowsFormsApplication4\obj\Debug\LILAutoClicker.csproj.CoreCompileInputs.cache
 C:\Users\lorenzo.lilli\source\repos\lillilor\Main\WindowsFormsApplication4\WindowsFormsApplication4\obj\Debug\LILAutoClicker.exe
 C:\Users\lorenzo.lilli\source\repos\lillilor\Main\WindowsFormsApplication4\WindowsFormsApplication4\obj\Debug\LILAutoClicker.pdb

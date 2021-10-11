@@ -1,6 +1,7 @@
 ﻿using LILAutoClicker;
 using System;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Threading;
@@ -24,10 +25,10 @@ namespace LIL
         int             delay;
         int             repeatFor;
         int             counter;
-        //private int     counterAux;
         bool            abort = false;
         private bool    reset = false;
-        public bool            running = false;
+        public bool     running = false;
+        private string  loadedConfFile = "";
 
  
         [DllImport("User32.dll")]
@@ -75,6 +76,11 @@ namespace LIL
                 if (counter % 4 == 3)
                 {
                     Text = "LILAutoClicker [Running...]";
+                }
+
+                if (loadedConfFile != "")
+                {
+                    Text = "(" + loadedConfFile +")" + Text;
                 }
             }
         }
@@ -143,8 +149,12 @@ namespace LIL
             thread.Abort();
             Playbutton.Enabled = true;
             Stopbutton.Enabled = false;
-            Text = "LILAutoClicker";
-            //counterAux = 0;
+
+            if (loadedConfFile != "")
+            {
+                Text = "(" + loadedConfFile + ")" + "LILAutoClicker";
+            }
+
             running = false;
         }
 
@@ -153,7 +163,6 @@ namespace LIL
             Thread.Sleep(delay + GetOffset());
             SendKeys.SendWait(keyToPress);
             counter++;
-            //counterAux++;
             SetText();
         }
 
@@ -342,8 +351,8 @@ namespace LIL
 
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
-                string empty = openFileDialog.FileName;
-                xmlDocument.Load(empty);
+                string file = openFileDialog.FileName;
+                xmlDocument.Load(file);
                 XmlNode xmlNode = xmlDocument.DocumentElement.SelectSingleNode("/conf/process");
                 XmlNode xmlNode2 = xmlDocument.DocumentElement.SelectSingleNode("/conf/keys");
                 XmlNode xmlNode3 = xmlDocument.DocumentElement.SelectSingleNode("/conf/delay");
@@ -357,6 +366,7 @@ namespace LIL
                    xmlNode5 == null )
                 {
                     MessageBox.Show("This is not a valid file!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                    loadedConfFile = "";
                 }
                 else
                 {
@@ -365,6 +375,9 @@ namespace LIL
                     DelaynumericUpDown.Value = int.Parse(xmlNode3.InnerXml);
                     RepeatnumericUpDown.Value = int.Parse(xmlNode4.InnerXml);
                     RandomcheckBox.Checked = bool.Parse(xmlNode5.InnerXml);
+
+                    loadedConfFile = Path.GetFileName(file);
+                    SetRunningWindowsTitle();
                 }
             }
         }

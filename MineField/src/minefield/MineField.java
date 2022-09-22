@@ -55,7 +55,7 @@ public class MineField extends javax.swing.JFrame implements ActionListener, Mou
     {
         initComponents();
         Image img;
-                
+                     
         try
         {
             img = ImageIO.read(getClass().getResource("/resources/MineField.png"));
@@ -207,6 +207,8 @@ public class MineField extends javax.swing.JFrame implements ActionListener, Mou
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         initFromDialog = true;
+        chrono.stop();
+
         this.initPanel();
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -589,7 +591,7 @@ public class MineField extends javax.swing.JFrame implements ActionListener, Mou
     {
         Dimension WindowsSize;
         int i,j;
-        int FormWidth;
+        int FormWidth,FormHeight;
         
         
         this.initInternal();
@@ -618,16 +620,15 @@ public class MineField extends javax.swing.JFrame implements ActionListener, Mou
             }
         }
 
-        FormWidth = (columns * tileHeight) - (4*columns) + 4 + 25;
+        FormWidth = (columns * tileHeight) - (4*columns) + 4 + 25 + 10;
+        FormHeight = (rows * tileWidht) - (4*rows) + 4 + 180 + 10;
         
         if(FormWidth < 381)
         {
             FormWidth = 381;
         }
         
-        WindowsSize = new Dimension(FormWidth,
-                                    (rows * tileWidht) - (4*rows) + 4 + 180
-                                    );
+        WindowsSize = new Dimension(FormWidth,FormHeight);
         
         this.setSize(WindowsSize);
         this.setPreferredSize(WindowsSize);
@@ -649,7 +650,7 @@ public class MineField extends javax.swing.JFrame implements ActionListener, Mou
         
         
         
-        jPanel1.setSize((int) WindowsSize.getWidth() - 25,90);
+        jPanel1.setSize((int) WindowsSize.getWidth() - 25 - 10,90);
         jPanel1.setPreferredSize(jPanel1.getSize());//set(jPanel5.getWidth(),90);
         jLabel7.setLocation((jPanel1.getWidth() - (jLabel7.getWidth()) - 10),7);
         jButton1.setLocation((jPanel1.getWidth()/2) - (jButton1.getWidth() /2), 20 );

@@ -75,6 +75,51 @@ public class MineField extends javax.swing.JFrame implements ActionListener, Mou
  
     }
 
+    enum CentralButtonImage {
+    SMILE,
+    SMILEPRESSED,
+    SAD,
+    SURPRISE,
+    WIN
+    }
+    
+    private void setCentralButtonImage(CentralButtonImage _status)
+    {
+        String iconName ="";
+        
+        switch(_status)
+        {
+            case SMILE:
+                iconName = "/resources/Smile02.png";
+                break;
+                
+            case SMILEPRESSED:
+                iconName = "/resources/Smile02Pressed.png";
+                break;
+                
+            case SAD:
+                iconName = "/resources/Sad.png";
+                break;
+                
+            case SURPRISE:
+                iconName = "/resources/Surprise.png";
+                break;
+                
+            case WIN:
+            iconName = "/resources/Win.png";
+            break;
+        }
+        
+        try
+        {
+            Image img = ImageIO.read(getClass().getResource(iconName));
+            jButton1.setIcon(new ImageIcon(img));
+        }
+        catch (IOException ex)
+        {
+            System.out.println(ex);
+        }
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -129,18 +174,23 @@ public class MineField extends javax.swing.JFrame implements ActionListener, Mou
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jPanel1.setLayout(null);
 
-        jLabel5.setFont(new java.awt.Font("OCR A Std", 1, 24)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Agency FB", 1, 36)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 0, 0));
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        jLabel5.setOpaque(true);
         jLabel5.setPreferredSize(new java.awt.Dimension(75, 75));
         jPanel1.add(jLabel5);
         jLabel5.setBounds(10, 7, 75, 75);
 
-        jButton1.setText("OK");
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/Smile02.png"))); // NOI18N
         jButton1.setBorder(null);
         jButton1.setBorderPainted(false);
-        jButton1.setPreferredSize(new java.awt.Dimension(50, 50));
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jButton1MousePressed(evt);
+            }
+        });
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -208,7 +258,7 @@ public class MineField extends javax.swing.JFrame implements ActionListener, Mou
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         initFromDialog = true;
         chrono.stop();
-
+        this.setCentralButtonImage(CentralButtonImage.SMILE);
         this.initPanel();
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -249,6 +299,11 @@ public class MineField extends javax.swing.JFrame implements ActionListener, Mou
         // TODO add your handling code here:
         this.revealFieldWin();
     }//GEN-LAST:event_jMenuItem4ActionPerformed
+
+    private void jButton1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MousePressed
+        // TODO add your handling code here:
+        this.setCentralButtonImage(CentralButtonImage.SMILEPRESSED);
+    }//GEN-LAST:event_jButton1MousePressed
 
     private void createComponentMap() 
     {
@@ -398,23 +453,14 @@ public class MineField extends javax.swing.JFrame implements ActionListener, Mou
             
             chrono.stop();
             timeStarted = false;
-            
-            Image img;
-            
-            ImageIcon imageIcon;
-            
-            try
-            {
-                img = ImageIO.read(getClass().getResource("/resources/loose.png"));
-                imageIcon = new ImageIcon(img);
-                JOptionPane.showMessageDialog(this, "YOU LOOSE","Mine Field",JOptionPane.ERROR_MESSAGE, imageIcon);
-            } catch (IOException ex)
-            {
-                Logger.getLogger(MineField.class.getName()).log(Level.SEVERE, null, ex);
-            } 
+ 
+            this.setCentralButtonImage(CentralButtonImage.SAD);
+          
         }
         else
         {
+            this.setCentralButtonImage(CentralButtonImage.SMILE);
+            
             if(mines > 0)
             {
                //_tile.setText(String.format("%d",mines));
@@ -432,22 +478,8 @@ public class MineField extends javax.swing.JFrame implements ActionListener, Mou
             this.revealFieldWin();
             chrono.stop();
             timeStarted = false;
-            Image img;
-            
-            ImageIcon imageIcon;
-            
-            try
-            {
-                img = ImageIO.read(getClass().getResource("/resources/smile.png"));
-                imageIcon = new ImageIcon(img);
-                JOptionPane.showMessageDialog(this, "***YOU WIN!***","Mine Field",JOptionPane.INFORMATION_MESSAGE, imageIcon);
-            } catch (IOException ex)
-            {
-                Logger.getLogger(MineField.class.getName()).log(Level.SEVERE, null, ex);
-            }
-
-
-            System.out.println(String.format("%d",this.calls));  
+ 
+            this.setCentralButtonImage(CentralButtonImage.WIN);
         }
     }
     
@@ -739,6 +771,10 @@ public class MineField extends javax.swing.JFrame implements ActionListener, Mou
     @Override
     public void mousePressed(MouseEvent me) {
        // throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        if (SwingUtilities.isLeftMouseButton(me))
+        {
+            this.setCentralButtonImage(CentralButtonImage.SURPRISE);
+        }
     }
 
     @Override

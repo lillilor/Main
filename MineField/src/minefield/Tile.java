@@ -20,16 +20,11 @@ import javax.swing.ImageIcon;
  */
 public class Tile extends javax.swing.JToggleButton
 {
-    int     width;
-    int     height;
     int     i;
     int     j;
     int     state;
     boolean pressed;
-    int     columns;
-    int     rows;
     boolean bomb;
-    int     bombPercent;
     
     public int getI()
     {
@@ -80,14 +75,10 @@ public class Tile extends javax.swing.JToggleButton
         int     randomNum;
         double  val;
 
-        width   = _width;
-        height  = _height;
         i       = _i;
         j       = _j;
         state   = 0;
         pressed = false;
-        columns = _columns;
-        rows    = _rows;
         
         randomNum = new Random().nextInt((_columns * _rows));
         val = (double) ((double)randomNum / (double)(_columns * _rows));

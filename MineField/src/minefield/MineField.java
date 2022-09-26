@@ -448,14 +448,13 @@ public class MineField extends javax.swing.JFrame implements ActionListener, Mou
         if(_tile.isBomb())
         {
             this.revealField();
-            
+
             loose = true;
             
             chrono.stop();
             timeStarted = false;
  
             this.setCentralButtonImage(CentralButtonImage.SAD);
-          
         }
         else
         {
@@ -472,6 +471,11 @@ public class MineField extends javax.swing.JFrame implements ActionListener, Mou
         }
         
         _tile.setPressed(true,mines); 
+        
+        if(loose == true)
+        {
+            _tile.setBombImageCurrent();
+        }
         
         if(this.checkWin())
         {

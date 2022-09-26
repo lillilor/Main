@@ -112,6 +112,18 @@ public class Tile extends javax.swing.JToggleButton
         }      
     }
     
+    public void setBombImageCurrent()
+    {
+        try
+        {
+            Image img = ImageIO.read(getClass().getResource("/resources/tileBombCurrent.png"));
+            this.setIcon(new ImageIcon(img));
+        } catch (IOException ex)
+        {
+            Logger.getLogger(Tile.class.getName()).log(Level.SEVERE, null, ex);
+        }      
+    }
+    
     public void setMarkTile()
     {
         String iconsPath;

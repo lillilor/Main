@@ -1,0 +1,10 @@
+C:\Users\Admin3169b2d145\Documents\Visual Studio 2019\Projects\LABELREPLACER\LABELREPLACER\bin\Release\LABELREPLACER.exe.config
+C:\Users\Admin3169b2d145\Documents\Visual Studio 2019\Projects\LABELREPLACER\LABELREPLACER\bin\Release\LABELREPLACER.exe
+C:\Users\Admin3169b2d145\Documents\Visual Studio 2019\Projects\LABELREPLACER\LABELREPLACER\bin\Release\LABELREPLACER.pdb
+C:\Users\Admin3169b2d145\Documents\Visual Studio 2019\Projects\LABELREPLACER\LABELREPLACER\obj\Release\LABELREPLACER.csproj.AssemblyReference.cache
+C:\Users\Admin3169b2d145\Documents\Visual Studio 2019\Projects\LABELREPLACER\LABELREPLACER\obj\Release\LABELREPLACER.LabelReplacerReadExcel.resources
+C:\Users\Admin3169b2d145\Documents\Visual Studio 2019\Projects\LABELREPLACER\LABELREPLACER\obj\Release\LABELREPLACER.Properties.Resources.resources
+C:\Users\Admin3169b2d145\Documents\Visual Studio 2019\Projects\LABELREPLACER\LABELREPLACER\obj\Release\LABELREPLACER.csproj.GenerateResource.cache
+C:\Users\Admin3169b2d145\Documents\Visual Studio 2019\Projects\LABELREPLACER\LABELREPLACER\obj\Release\LABELREPLACER.csproj.CoreCompileInputs.cache
+C:\Users\Admin3169b2d145\Documents\Visual Studio 2019\Projects\LABELREPLACER\LABELREPLACER\obj\Release\LABELREPLACER.exe
+C:\Users\Admin3169b2d145\Documents\Visual Studio 2019\Projects\LABELREPLACER\LABELREPLACER\obj\Release\LABELREPLACER.pdb

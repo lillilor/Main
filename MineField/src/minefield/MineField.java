@@ -66,10 +66,10 @@ public class MineField extends javax.swing.JFrame implements ActionListener, Mou
             Logger.getLogger(MineField.class.getName()).log(Level.SEVERE, null, ex);
         }
         
-        jSeparator1.setSize((int)360, 1);
-        jSeparator1.setPreferredSize(jSeparator1.getSize());
+        MainPanelSeparator.setSize((int)360, 1);
+        MainPanelSeparator.setPreferredSize(MainPanelSeparator.getSize());
         chrono = new Timer(1000, this);
-        jLabel5.setText(String.format("%02d", seconds));
+        ChronoLabel.setText(String.format("%02d", seconds));
         
         initFromDialog = false;
  
@@ -113,7 +113,7 @@ public class MineField extends javax.swing.JFrame implements ActionListener, Mou
         try
         {
             Image img = ImageIO.read(getClass().getResource(iconName));
-            jButton1.setIcon(new ImageIcon(img));
+            CentralButton.setIcon(new ImageIcon(img));
         }
         catch (IOException ex)
         {
@@ -132,20 +132,20 @@ public class MineField extends javax.swing.JFrame implements ActionListener, Mou
 
         jSpinner3 = new javax.swing.JSpinner();
         jLabel3 = new javax.swing.JLabel();
-        jPanel5 = new javax.swing.JPanel();
-        jSeparator1 = new javax.swing.JSeparator();
-        jPanel1 = new javax.swing.JPanel();
-        jLabel5 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jLabel7 = new javax.swing.JLabel();
-        jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuItem4 = new javax.swing.JMenuItem();
-        jSeparator2 = new javax.swing.JPopupMenu.Separator();
-        jMenuItem2 = new javax.swing.JMenuItem();
-        jMenu2 = new javax.swing.JMenu();
-        jMenuItem3 = new javax.swing.JMenuItem();
+        MinesPanel = new javax.swing.JPanel();
+        MainPanelSeparator = new javax.swing.JSeparator();
+        AbovePanel = new javax.swing.JPanel();
+        ChronoLabel = new javax.swing.JLabel();
+        CentralButton = new javax.swing.JButton();
+        MinesLabel = new javax.swing.JLabel();
+        MainMenu = new javax.swing.JMenuBar();
+        Game = new javax.swing.JMenu();
+        NewGame = new javax.swing.JMenuItem();
+        RevealsMines = new javax.swing.JMenuItem();
+        MainMenuSeparator = new javax.swing.JPopupMenu.Separator();
+        ExitGame = new javax.swing.JMenuItem();
+        Help = new javax.swing.JMenu();
+        About = new javax.swing.JMenuItem();
 
         jLabel3.setText("Height");
 
@@ -153,116 +153,116 @@ public class MineField extends javax.swing.JFrame implements ActionListener, Mou
         setTitle("Lillilor MineFiels");
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel5.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        MinesPanel.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout MinesPanelLayout = new javax.swing.GroupLayout(MinesPanel);
+        MinesPanel.setLayout(MinesPanelLayout);
+        MinesPanelLayout.setHorizontalGroup(
+            MinesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 19, Short.MAX_VALUE)
         );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        MinesPanelLayout.setVerticalGroup(
+            MinesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 18, Short.MAX_VALUE)
         );
 
-        getContentPane().add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, -1, -1));
+        getContentPane().add(MinesPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, -1, -1));
 
-        jSeparator1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        getContentPane().add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 110, -1, 5));
+        MainPanelSeparator.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        getContentPane().add(MainPanelSeparator, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 110, -1, 5));
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jPanel1.setLayout(null);
+        AbovePanel.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        AbovePanel.setLayout(null);
 
-        jLabel5.setFont(new java.awt.Font("Agency FB", 1, 36)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 0, 0));
-        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel5.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
-        jLabel5.setOpaque(true);
-        jLabel5.setPreferredSize(new java.awt.Dimension(75, 75));
-        jPanel1.add(jLabel5);
-        jLabel5.setBounds(10, 7, 75, 75);
+        ChronoLabel.setFont(new java.awt.Font("Agency FB", 1, 36)); // NOI18N
+        ChronoLabel.setForeground(new java.awt.Color(255, 0, 0));
+        ChronoLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        ChronoLabel.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        ChronoLabel.setOpaque(true);
+        ChronoLabel.setPreferredSize(new java.awt.Dimension(75, 75));
+        AbovePanel.add(ChronoLabel);
+        ChronoLabel.setBounds(10, 7, 75, 75);
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/Smile02.png"))); // NOI18N
-        jButton1.setBorder(null);
-        jButton1.setBorderPainted(false);
-        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+        CentralButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/Smile02.png"))); // NOI18N
+        CentralButton.setBorder(null);
+        CentralButton.setBorderPainted(false);
+        CentralButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                jButton1MousePressed(evt);
+                CentralButtonMousePressed(evt);
             }
         });
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        CentralButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                CentralButtonActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1);
-        jButton1.setBounds(150, 17, 50, 50);
+        AbovePanel.add(CentralButton);
+        CentralButton.setBounds(150, 17, 50, 50);
 
-        jLabel7.setBackground(new java.awt.Color(153, 153, 153));
-        jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
-        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel7.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
-        jLabel7.setPreferredSize(new java.awt.Dimension(75, 75));
-        jPanel1.add(jLabel7);
-        jLabel7.setBounds(285, 5, 75, 75);
+        MinesLabel.setBackground(new java.awt.Color(153, 153, 153));
+        MinesLabel.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        MinesLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        MinesLabel.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        MinesLabel.setPreferredSize(new java.awt.Dimension(75, 75));
+        AbovePanel.add(MinesLabel);
+        MinesLabel.setBounds(285, 5, 75, 75);
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+        getContentPane().add(AbovePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
-        jMenu1.setText("Game");
+        Game.setText("Game");
 
-        jMenuItem1.setText("New Game...");
-        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+        NewGame.setText("New Game...");
+        NewGame.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem1ActionPerformed(evt);
+                NewGameActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItem1);
+        Game.add(NewGame);
 
-        jMenuItem4.setText("Reveals mines");
-        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
+        RevealsMines.setText("Reveals mines");
+        RevealsMines.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem4ActionPerformed(evt);
+                RevealsMinesActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItem4);
-        jMenu1.add(jSeparator2);
+        Game.add(RevealsMines);
+        Game.add(MainMenuSeparator);
 
-        jMenuItem2.setText("Exit");
-        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+        ExitGame.setText("Exit");
+        ExitGame.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem2ActionPerformed(evt);
+                ExitGameActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItem2);
+        Game.add(ExitGame);
 
-        jMenuBar1.add(jMenu1);
+        MainMenu.add(Game);
 
-        jMenu2.setText("Help");
+        Help.setText("Help");
 
-        jMenuItem3.setText("About mineField");
-        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+        About.setText("About mineField");
+        About.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem3ActionPerformed(evt);
+                AboutActionPerformed(evt);
             }
         });
-        jMenu2.add(jMenuItem3);
+        Help.add(About);
 
-        jMenuBar1.add(jMenu2);
+        MainMenu.add(Help);
 
-        setJMenuBar(jMenuBar1);
+        setJMenuBar(MainMenu);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void CentralButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CentralButtonActionPerformed
         initFromDialog = true;
         chrono.stop();
         this.setCentralButtonImage(CentralButtonImage.SMILE);
         this.initPanel();
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_CentralButtonActionPerformed
 
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+    private void NewGameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NewGameActionPerformed
         // TODO add your handling code here:
         
         boolean closeOk;
@@ -283,32 +283,32 @@ public class MineField extends javax.swing.JFrame implements ActionListener, Mou
             
             this.initPanel();
         } 
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
+    }//GEN-LAST:event_NewGameActionPerformed
 
-    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+    private void ExitGameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExitGameActionPerformed
         // TODO add your handling code here:
         this.dispose();
-    }//GEN-LAST:event_jMenuItem2ActionPerformed
+    }//GEN-LAST:event_ExitGameActionPerformed
 
-    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+    private void AboutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AboutActionPerformed
         // TODO add your handling code here:
         JOptionPane.showMessageDialog(this, "MineFiled\nVer 1.0\n22/09/2011\nPowered by:\nlillilor","MineFiled",JOptionPane.INFORMATION_MESSAGE);
-    }//GEN-LAST:event_jMenuItem3ActionPerformed
+    }//GEN-LAST:event_AboutActionPerformed
 
-    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
+    private void RevealsMinesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RevealsMinesActionPerformed
         // TODO add your handling code here:
         this.revealFieldWin();
-    }//GEN-LAST:event_jMenuItem4ActionPerformed
+    }//GEN-LAST:event_RevealsMinesActionPerformed
 
-    private void jButton1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MousePressed
+    private void CentralButtonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CentralButtonMousePressed
         // TODO add your handling code here:
         this.setCentralButtonImage(CentralButtonImage.SMILEPRESSED);
-    }//GEN-LAST:event_jButton1MousePressed
+    }//GEN-LAST:event_CentralButtonMousePressed
 
     private void createComponentMap() 
     {
         componentMap = new HashMap<String,Component>();
-        Component[] components =  jPanel5.getComponents();
+        Component[] components =  MinesPanel.getComponents();
         for (Component component : components)
         {
             componentMap.put(component.getName(), component);
@@ -410,7 +410,7 @@ public class MineField extends javax.swing.JFrame implements ActionListener, Mou
                 {
                      nextSafeTile = (Tile) this.getComponentByName("Tile_"+Integer.toString(j)+"_"+Integer.toString(i));
                      mines = this.getMienesAround(nextSafeTile);
-
+                     /*
                      if(nextSafeTile.getPressed() == false 
                         && mines == 0)        
                      {
@@ -421,6 +421,19 @@ public class MineField extends javax.swing.JFrame implements ActionListener, Mou
                      else
                      {
                          if(mines > 0)
+                         {
+                             nextSafeTile.setPressed(true,mines);
+                         }
+                     }*/
+                     if(nextSafeTile.getPressed() == false)
+                     {
+                         if(mines == 0)
+                         {
+                            nextSafeTile.setPressed(true,mines);
+                            this.calls ++;
+                            this.explodeSafe(nextSafeTile);
+                         }
+                         else
                          {
                              nextSafeTile.setPressed(true,mines);
                          }
@@ -568,7 +581,7 @@ public class MineField extends javax.swing.JFrame implements ActionListener, Mou
         if(e.getSource() instanceof Timer)
         {
             seconds ++;
-            jLabel5.setText(String.format("%02d", seconds));  
+            ChronoLabel.setText(String.format("%02d", seconds));  
         }
         
         if(!timeStarted)
@@ -619,7 +632,7 @@ public class MineField extends javax.swing.JFrame implements ActionListener, Mou
                 }
             }
             
-            jLabel7.setText(String.format("%d",(mines - markedMines)));
+            MinesLabel.setText(String.format("%d",(mines - markedMines)));
         }  
     }
     
@@ -634,10 +647,10 @@ public class MineField extends javax.swing.JFrame implements ActionListener, Mou
 
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         
-        jPanel5.setSize(new Dimension((columns * tileHeight) - (4*columns) + 4, (rows * tileWidht) - (4*rows) + 4));
-        jPanel5.setPreferredSize(jPanel5.getSize());
-        jPanel5.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel5.removeAll();
+        MinesPanel.setSize(new Dimension((columns * tileHeight) - (4*columns) + 4, (rows * tileWidht) - (4*rows) + 4));
+        MinesPanel.setPreferredSize(MinesPanel.getSize());
+        MinesPanel.setBackground(new java.awt.Color(204, 204, 204));
+        MinesPanel.removeAll();
  
         for(i = 0; i< columns; i++)
         {
@@ -647,7 +660,7 @@ public class MineField extends javax.swing.JFrame implements ActionListener, Mou
                 tile.addActionListener(this);
                 tile.addMouseListener((MouseListener) this);
                 MatrixField[i][j] = tile.isBomb();
-                jPanel5.add(tile);
+                MinesPanel.add(tile);
                 
                 if(tile.isBomb())
                 {
@@ -677,21 +690,21 @@ public class MineField extends javax.swing.JFrame implements ActionListener, Mou
             gameStartPosition = true;
         }
         
-        jSeparator1.setSize((int) WindowsSize.getWidth()-5, 1);
-        jSeparator1.setPreferredSize(jSeparator1.getSize());
+        MainPanelSeparator.setSize((int) WindowsSize.getWidth()-5, 1);
+        MainPanelSeparator.setPreferredSize(MainPanelSeparator.getSize());
 
-        jLabel7.setText(String.format("%d",totoalMines));
+        MinesLabel.setText(String.format("%d",totoalMines));
         
-        jLabel5.setText(String.format("%02d",seconds));
+        ChronoLabel.setText(String.format("%02d",seconds));
         
         
         
-        jPanel1.setSize((int) WindowsSize.getWidth() - 25 - 10,90);
-        jPanel1.setPreferredSize(jPanel1.getSize());//set(jPanel5.getWidth(),90);
-        jLabel7.setLocation((jPanel1.getWidth() - (jLabel7.getWidth()) - 10),7);
-        jButton1.setLocation((jPanel1.getWidth()/2) - (jButton1.getWidth() /2), 20 );
+        AbovePanel.setSize((int) WindowsSize.getWidth() - 25 - 10,90);
+        AbovePanel.setPreferredSize(AbovePanel.getSize());//set(jPanel5.getWidth(),90);
+        MinesLabel.setLocation((AbovePanel.getWidth() - (MinesLabel.getWidth()) - 10),7);
+        CentralButton.setLocation((AbovePanel.getWidth()/2) - (CentralButton.getWidth() /2), 20 );
         
-        jMenuItem4.setVisible(devMode);
+        RevealsMines.setVisible(devMode);
         
         this.setResizable(false);
         
@@ -754,21 +767,21 @@ public class MineField extends javax.swing.JFrame implements ActionListener, Mou
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JMenuItem About;
+    private javax.swing.JPanel AbovePanel;
+    private javax.swing.JButton CentralButton;
+    private javax.swing.JLabel ChronoLabel;
+    private javax.swing.JMenuItem ExitGame;
+    private javax.swing.JMenu Game;
+    private javax.swing.JMenu Help;
+    private javax.swing.JMenuBar MainMenu;
+    private javax.swing.JPopupMenu.Separator MainMenuSeparator;
+    private javax.swing.JSeparator MainPanelSeparator;
+    private javax.swing.JLabel MinesLabel;
+    private javax.swing.JPanel MinesPanel;
+    private javax.swing.JMenuItem NewGame;
+    private javax.swing.JMenuItem RevealsMines;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem4;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel5;
-    private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JPopupMenu.Separator jSeparator2;
     private javax.swing.JSpinner jSpinner3;
     // End of variables declaration//GEN-END:variables
 

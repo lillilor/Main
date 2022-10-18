@@ -130,8 +130,6 @@ public class MineField extends javax.swing.JFrame implements ActionListener, Mou
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jSpinner3 = new javax.swing.JSpinner();
-        jLabel3 = new javax.swing.JLabel();
         MinesPanel = new javax.swing.JPanel();
         MainPanelSeparator = new javax.swing.JSeparator();
         AbovePanel = new javax.swing.JPanel();
@@ -146,8 +144,6 @@ public class MineField extends javax.swing.JFrame implements ActionListener, Mou
         ExitGame = new javax.swing.JMenuItem();
         Help = new javax.swing.JMenu();
         About = new javax.swing.JMenuItem();
-
-        jLabel3.setText("Height");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Lillilor MineFiels");
@@ -578,6 +574,16 @@ public class MineField extends javax.swing.JFrame implements ActionListener, Mou
     @Override
     public void actionPerformed(ActionEvent e)
     {
+        if(this.checkWin())
+        {
+            return;
+        }
+        
+        if(loose)
+        {
+            return;
+        }
+        
         if(e.getSource() instanceof Timer)
         {
             seconds ++;
@@ -615,7 +621,7 @@ public class MineField extends javax.swing.JFrame implements ActionListener, Mou
             {
                 return;
             }
-            
+
             newState  = (newState + 1) % 3; 
             tile.setState(newState);
             tile.setMarkTile();
@@ -636,22 +642,10 @@ public class MineField extends javax.swing.JFrame implements ActionListener, Mou
         }  
     }
     
-    public void initPanel()
+    private void placeMinesOnField()
     {
-        Dimension WindowsSize;
         int i,j;
-        int FormWidth,FormHeight;
         
-        
-        this.initInternal();
-
-        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-        
-        MinesPanel.setSize(new Dimension((columns * tileHeight) - (4*columns) + 4, (rows * tileWidht) - (4*rows) + 4));
-        MinesPanel.setPreferredSize(MinesPanel.getSize());
-        MinesPanel.setBackground(new java.awt.Color(204, 204, 204));
-        MinesPanel.removeAll();
- 
         for(i = 0; i< columns; i++)
         {
             for(j=0; j< rows; j++)
@@ -668,6 +662,24 @@ public class MineField extends javax.swing.JFrame implements ActionListener, Mou
                 }
             }
         }
+    }
+    
+    public void initPanel()
+    {
+        Dimension WindowsSize;
+        
+        int FormWidth,FormHeight;
+                
+        this.initInternal();
+
+        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+        
+        MinesPanel.setSize(new Dimension((columns * tileHeight) - (4*columns) + 4, (rows * tileWidht) - (4*rows) + 4));
+        MinesPanel.setPreferredSize(MinesPanel.getSize());
+        MinesPanel.setBackground(new java.awt.Color(204, 204, 204));
+        MinesPanel.removeAll();
+ 
+        this.placeMinesOnField();
 
         FormWidth = (columns * tileHeight) - (4*columns) + 4 + 25 + 10;
         FormHeight = (rows * tileWidht) - (4*rows) + 4 + 180 + 10;
@@ -781,8 +793,6 @@ public class MineField extends javax.swing.JFrame implements ActionListener, Mou
     private javax.swing.JPanel MinesPanel;
     private javax.swing.JMenuItem NewGame;
     private javax.swing.JMenuItem RevealsMines;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JSpinner jSpinner3;
     // End of variables declaration//GEN-END:variables
 
     @Override
@@ -790,6 +800,16 @@ public class MineField extends javax.swing.JFrame implements ActionListener, Mou
        // throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
         if (SwingUtilities.isLeftMouseButton(me))
         {
+            if(this.checkWin())
+            {
+                return;
+            }
+            
+            if(loose)
+            {
+                return;
+            }
+            
             this.setCentralButtonImage(CentralButtonImage.SURPRISE);
         }
     }
